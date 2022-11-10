@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
-
+        setFormMessage(loginForm, "error", "invalid username/password combination");
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
