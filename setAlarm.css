@@ -1,0 +1,82 @@
+
+.row5{
+  width: 100%;
+  min-height: 90px;
+}
+
+.menu {
+  width: 100%;
+  min-height: 100px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.icon {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 25px;
+  width: 20%;
+  min-height:90px;
+  display:inline-block;
+  text-align: center;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+}
+
+.label{
+  display:block;
+}
+
+
+.timer {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-spacing: 10px;
+  border-color: black;
+  border: 1px solid;
+  width: 40%;
+}
+
+.timerSettings {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  align-items: center;
+  padding-bottom: 25px;
+  padding-left: 30%;
+  border-spacing: 5px;
+}
+
+.timerRow{
+  padding-left: 20px;
+  padding-right: 20px; 
+}
+
+.saveButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: #c70c0c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

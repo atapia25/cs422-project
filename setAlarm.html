@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    </style>
+
+    <link rel="stylesheet" href="setAlarm.css">
+  </head>
+  <body style="background-color:rgb(255, 218, 56);">
+    <table class="timer">
+      <h1 style="text-align: center;">Timer</h1>
+      <tr class ="timerRow">
+        <td>
+          <b>Hours</b>
+        </td>
+        <td>
+          <b>Minutes</b>
+        </td>
+        <td>
+          <b>Seconds</b>
+        </td>
+      </tr>
+      <tr class="timerRow">
+        <td>
+          <select name="hoursComboBox" id="hoursCB">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+          </select>
+        </td>
+        <td>
+          <select name="minutesComboBox" id="minsCB">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+            <option value="60">60</option>
+          </select>
+        </td>
+        <td>
+          <select name="secondsComboBox" id="secondsCB">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+            <option value="60">60</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    
+    <div class="timerSettings">
+      <label for="monday">Monday</label>
+      <input type="radio" id="monday" name="weekdays" value="Monday">
+      <label for="tuesday">Tuesday</label>
+      <input type="radio" id="tuesday" name="weekdays" value="Tuesday">
+      <label for="wednesday">Wednesday</label>
+      <input type="radio" id="wednesday" name="weekdays" value="Wednesday">
+      <label for="thursday">Thursday</label>
+      <input type="radio" id="thursday" name="weekdays" value="Thursday">
+      <label for="friday">Friday</label>
+      <input type="radio" id="friday" name="weekdays" value="Friday">
+      <label for="saturday">Saturday</label>
+      <input type="radio" id="saturday" name="weekdays" value="Saturday">
+      <label for="sunday">Sunday</label>
+      <input type="radio" id="sunday" name="weekdays" value="Sunday">
+
+      <br>
+      <br>
+      Label
+      <input class="labelTF"
+          type="text"
+          value="Enter label here...">
+      <br>
+      <button class="saveButton">Save</button>
+      <button class="cancelButton">Cancel</button>
+    </div>
+
+    <div class="savedAlarmsList">
+      <h2 style="text-align: center;">Saved Alarms</h2>
+    </div>
+
+
+    <div class="row5">
+      <div class="menu">
+        <div class="icon">
+          <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039605969589637241/unknown.png" />
+          <a class="label" id="home" href="./home.html">Home</a>
+        </div>
+        <div class="icon">
+          <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039606955926364292/unknown.png" />
+          <a class="label" id="note" href="./notes.html">Make Notes</a>
+        </div>
+        <div class="icon">
+          <img class="logo" src="https://cdn-icons-png.flaticon.com/512/3126/3126453.png" />
+          <a class="label" id="alarm" href="./mediaPage.html">Set Alarm</a>
+        </div>
+        <div class="icon">
+          <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039606319805644911/unknown.png" />
+          <a class="label" id="doctor" href="./online Consult.html">Online Consult</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
