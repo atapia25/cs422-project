@@ -1,0 +1,134 @@
+html,
+body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+
+.btnQuit{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 60px;
+  font-size: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+/* .btn {
+  href: top;
+  width: 80px;
+  height: 60px;
+  font-size: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  cursor: pointer;
+} */
+
+.btnQuit:hover {
+  background: gray;
+}
+
+
+
+.iconBtn{
+  vertical-align: top;
+  margin: 10px;
+  width: 80px;
+  height: 60px;
+}
+
+
+.icons{
+  width: 70px;
+  height: 50px;
+}
+
+.row3 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  border: 2px solid gray;
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: 10px;
+  display: grid;
+  row-gap: 10px;
+}
+
+.text {
+  margin: 10px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 20px;
+  width: 70%;
+  height: 50px;
+  font-weight: normal;
+}
+
+#selectedIcon{
+  width: 80px;
+  height: 60px;
+  display:inline-block;
+  
+}
+
+.btn {
+  margin: 10px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 20px;
+  width: 80px;
+  height: 60px;
+}
+
+.row4 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 20px;
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: 10px;
+  display: grid;
+  row-gap: 10px;
+}
+
+.note {
+  border: 2px solid gray;
+  width: 1400px;
+  height: 60px;
+}
+
+.row5{
+  width: 100%;
+  min-height: 90px;
+}
+
+.menu {
+  width: 100%;
+  min-height: 100px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.icon {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 25px;
+  width: 20%;
+  min-height:90px;
+  display:inline-block;
+  text-align: center;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+}
+
+.label{
+  display:block;
+}

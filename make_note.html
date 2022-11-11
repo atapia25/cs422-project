@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Make Note</title>
+
+  <link rel="stylesheet" href="make_note.css">
+
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js">
+  </script>
+  <script src="make_note.js"></script>
+
+  <script>
+    var fontState=0;
+    // Click Bold Font button once, it will change input text to bold text; click button twice,
+    // it will change back to orginal state.
+    $(document).on('click', "#bold", function (evt) {
+      if(fontState == 0) {
+        document.getElementById("input").style.fontWeight = "bold";
+        document.getElementById("result").style.fontWeight = "bold";
+        fontState = 1;
+      }
+      else if(fontState == 1) {
+        document.getElementById("input").style.fontWeight = "normal";
+        document.getElementById("result").style.fontWeight = "normal";
+        fontState = 0;
+      }
+    });
+
+
+    // Click Font Type button once, it will change font type; click button twice,
+    // it will change back to orginal state.
+    $(document).on('click', "#type", function (evt) {
+      if(fontState == 0){
+        document.getElementById("input").style.fontFamily="Georgia";
+        document.getElementById("result").style.fontFamily="Georgia";
+        fontState = 1;
+      }
+      else if(fontState == 1)
+      {
+        document.getElementById("input").style.fontFamily="Comic Sans MS";
+        document.getElementById("result").style.fontFamily="Comic Sans MS";
+        fontState = 0;
+      }
+    });
+
+    // Click Font Color button once, it will change font color; click button twice,
+    // it will change back to orginal state. 
+    $(document).on('click', "#color", function (evt) {
+      if(fontState == 0) {
+        document.getElementById("input").style.color="blue";
+        document.getElementById("result").style.color="blue";
+        fontState = 1;
+      }
+      else if (fontState == 1) {
+        document.getElementById("input").style.color="black";
+        document.getElementById("result").style.color="black";
+        fontState = 0;        
+      }
+    });
+
+    
+    // Click Font Size button once, it will increase font size; click button twice,
+    // it will change back to orginal state.
+    $(document).on('click', "#size", function (evt) {
+      
+      if(fontState == 0) {
+        document.getElementById("input").style.fontSize="30px";
+        document.getElementById("result").style.fontSize="30px";
+        fontState = 1;
+      }
+      else if(fontState == 1){
+        document.getElementById("input").style.fontSize="20px";
+        document.getElementById("result").style.fontSize="20px";
+        fontState = 0;
+      }
+      
+    });
+
+    // click +icon, show icon-buttons
+    $(document).on('click', "#addIcon", function (evt) {
+      document.getElementById("addicons").style.display="block";
+      document.getElementById("addIcon").disabled = true;
+    });
+
+
+    //  click selected icon button, set icon nect to text box and save text with image
+    $(document).on('click', ".iconBtn", function (evt) {
+      $("#selectedIcon").html($(this).html());
+    });
+
+
+    // endisable ok button after valid input
+    function myFunction(){
+      var x = document.getElementById("input").value;
+      if((x == '') || (x.length == 0)){
+        document.getElementById("ok").disabled=true;
+      }
+      else{
+        document.getElementById("ok").disabled=false;
+      }
+    }
+
+
+    // clear button to clear text and disable ok button
+    $(document).on('click', "#clear", function (evt) {
+      document.getElementById("input").value='';
+      document.getElementById("ok").disabled=true;
+      document.getElementById("selectedIcon").innerHTML = "";
+      document.getElementById("addIcon").disabled = false;
+    });
+
+
+    // click ok, save the note and show delete button
+    $(document).on('click', "#ok", function(evt){
+      
+      var note = []
+      note.push(document.getElementById("input").value);
+      if(note!=''){
+        document.getElementById("noteIcon").innerHTML = document.getElementById("selectedIcon").innerHTML;
+        document.getElementById("result").innerText=note[0];
+        alert("The note (" + note[0] + ") is Saved!");
+        document.getElementById("delete").style.display="block";
+        document.getElementById("delete").disabled=false;
+      }
+      document.getElementById("input").value='';
+      document.getElementById("ok").disabled=true;
+      document.getElementById("selectedIcon").innerHTML = "";
+      document.getElementById("addIcon").disabled = false;
+      
+    })
+
+
+    // click delete button next to the note and delete that note
+    $(document).on('click', "#delete", function (evt) {
+      var note = []
+      note.push(document.getElementById("result").innerText);
+      alert("The note (" + note[0] + ") is deleted!");
+      document.getElementById("result").innerText="";
+      document.getElementById("delete").disabled=true;
+      document.getElementById("noteIcon").innerHTML = "";
+    });
+
+  </script>
+</head>
+
+ <body style="background-color: pink">
+  <div class="container">
+    <div class="row1">
+      <button class="btnQuit" type="button" id="quit" onclick="self.close()">Quit</button>
+    </div>
+    <div class="row2">
+      <h1 style="text-align:center">Make Note</h1>
+    </div>
+
+    <div class="row3">
+      <div>
+        <button class="btn" type="button" id="bold">Bold Font</button>
+        <button class="btn" type="button" id="type">Font Type</button>
+        <button class="btn" type="button" id="color">Font Color</button>
+        <button class="btn" type="button" id="size">Font Size</button>
+      </div>
+      <div id="addicons" type="button" hidden>
+        <button class="iconBtn" type="button" id="fomula"><img class="icons" src="https://cdn.discordapp.com/attachments/844261326754021406/1040093296921411604/Screen_Shot_2022-11-09_at_8.39.19_PM.png
+          "></button>
+        <button class="iconBtn" type="button" id="shower"><img class="icons" src="https://cdn.discordapp.com/attachments/844261326754021406/1040091188205723648/Screen_Shot_2022-11-09_at_8.30.46_PM.png"></button>
+        <button class="iconBtn" type="button" id="sleep"><img class="icons" src="https://cdn.discordapp.com/attachments/844261326754021406/1040093408267612241/Screen_Shot_2022-11-09_at_8.39.46_PM.png"></button>
+        <button class="iconBtn" type="button" id="learn"><img class="icons" src="https://cdn.discordapp.com/attachments/844261326754021406/1040093548927782992/Screen_Shot_2022-11-09_at_8.40.21_PM.png"></button>
+        <button class="iconBtn" type="button" id="pee/poo"><img class="icons" src="https://cdn.discordapp.com/attachments/844261326754021406/1040093770080862228/Screen_Shot_2022-11-09_at_8.41.11_PM.png"></button>
+        <button class="iconBtn" type="button" id="play"><img class="icons" src="https://cdn.discordapp.com/attachments/844261326754021406/1040094046980423751/Screen_Shot_2022-11-09_at_8.42.19_PM.png"></button>
+      </div>
+      <div class="text1">
+        <form>
+          <button type="button" class="btn" id="addIcon">+ icon</button>
+          <div id="selectedIcon" style="width:80px; height:60px; display:inline-block;"></div>
+          <input class="text" type="text" id="input" onkeyup="myFunction()" placeholder="Typing here..."></input>
+          <button class="btn" type="button" id="ok" disabled>OK</button>
+          <button class="btn" type="button" id="clear">Clear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row4">
+    <div id="note">
+      <label>Save Notes: </label><br />
+      <form>
+        <div id="noteIcon" style="width:80px; height:60px; display:inline-block;"></div>
+        <label type="label" class="text" id="result"></label>
+        <button class="btn" type="button" id="delete" hidden>Delete</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row5">
+    <div class="menu">
+      <div class="icon">
+        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039605969589637241/unknown.png" />
+        <a class="label" id="home" href="./home.html">Home</a>
+      </div>
+      <div class="icon">
+        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039604755883884565/unknown.png" />
+        <a class="label" id="video" href="./playVideo.html">Play Video/Music</a>
+      </div>
+      <div class="icon">
+        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039607413625606204/unknown.png" />
+        <a class="label" id="alarm" href="./setAlarm.html">Set Alarm</a>
+      </div>
+      <div class="icon">
+        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039606319805644911/unknown.png" />
+        <a class="label" id="doctor" href="./online Consult.html">Online Consult</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
