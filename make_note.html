@@ -123,7 +123,6 @@
       if(note!=''){
         document.getElementById("noteIcon").innerHTML = document.getElementById("selectedIcon").innerHTML;
         document.getElementById("result").innerText=note[0];
-        alert("The note (" + note[0] + ") is Saved!");
         document.getElementById("delete").style.display="block";
         document.getElementById("delete").disabled=false;
       }
@@ -151,7 +150,7 @@
  <body style="background-color: pink">
   <div class="container">
     <div class="row1">
-      <!-- <button class="btnQuit" type="button" id="quit" onclick="self.close()">Quit</button> -->
+      <button class="btnQuit" type="button" id="quit" onclick="self.close()">Quit</button>
     </div>
     <div class="row2">
       <h1 style="text-align:center; font-family:Comic Sans MS">Make Note</h1>
@@ -198,19 +197,27 @@
   <div class="row5">
     <div class="menu">
       <div class="icon">
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039605969589637241/unknown.png" />
-        <a class="label" id="home" href="./Home.html">Home</a>
+        <a class="label" id="home" href= "./Home.html"> 
+          <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039605969589637241/unknown.png" />
+        </a>
+          <a class="label" id="home" href="./Home.html">Home</a>
       </div>
       <div class="icon">
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039604755883884565/unknown.png" />
+        <a class="label" id="video" href="./mediaPage.html">
+          <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039604755883884565/unknown.png" />
+        </a>
         <a class="label" id="video" href="./mediaPage.html">Play Video/Music</a>
       </div>
       <div class="icon">
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039607413625606204/unknown.png" />
+        <a class="label" id="alarm" href="./setAlarm.html">
+          <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039607413625606204/unknown.png" />
+        </a>
         <a class="label" id="alarm" href="./setAlarm.html">Set Alarm</a>
       </div>
       <div class="icon">
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039606319805644911/unknown.png" />
+        <a class="label" id="doctor" href="./Online_Consult.html">
+          <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039606319805644911/unknown.png" />
+        </a>
         <a class="label" id="doctor" href="./Online_Consult.html">Online Consult</a>
       </div>
     </div>

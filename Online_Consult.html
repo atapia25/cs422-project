@@ -15,13 +15,25 @@
     <script src="Online_Consult.js"></script>
 
     <script>
-        // click button and return a message
-        function sendto() {
-            var mes = document.getElementById("user_message").value;
-            console.log(mes)
-            document.getElementById('user').innerHTML = mes;
-            document.getElementById("doctor").value = "what can I help you?";
+        function myFunction(){
+            var x = document.getElementById("user_message").value;
+            if((x == '') || (x.length == 0)){
+                document.getElementById("send").disabled=true;
+            }
+            else{
+                document.getElementById("send").disabled=false;
+            }
         }
+
+        // click button and return a message
+        $(document).on('click', "#send", function (evt) {
+            var mes = document.getElementById('user_message').value;
+            console.log(mes)
+            if(mes != '') {
+                document.getElementById('user').innerText = "User:" + mes;
+                // document.getElementById("doctor").value = "what can I help you?";
+            }
+        });
         // doctor response message to use window
     
 
@@ -30,10 +42,13 @@
 </head>
 
 <body>
+    <div>
+        <button class="btnQuit" type="button" id="quit" onclick="self.close()">Quit</button>
+    </div>
     <h1 class="title">
         Online Consult
     </h1>
-    <br \>
+    <br/>
     <div class="communication">
         
         <form method = "get">
@@ -42,13 +57,14 @@
             </label><br>
         </form>
 
-        <br \>
-        <form method = "get">
-            <label id="user" >
-                user:  Hello!
-            </label><br>
-            <input type="text" id="user_ message" />
-            <button id="user_send" style= "font-size: 20px; font-family:Comic Sans MS" onclick="sendto()">Send</button>
+        <br/>
+        <form>
+            
+            <label type="label" class="text" id="user" ></label>
+        </form>
+        <form>
+            <input class="text" type="text" id="user_message" onkeyup="myFunction()" placeholder="Typing here..."></input>
+            <button class="btn" type="button" id="send" disabled style= "font-size: 20px; font-family:Comic Sans MS">Send</button>
         </form>
         
     
@@ -58,22 +74,30 @@
     <div class="menu">
 
         <div class="icon">
-            <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039605969589637241/unknown.png" />
+            <a class="label" id="home" href="./Home.html">
+                <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039605969589637241/unknown.png" />
+            </a>
             <a class="label" id="home" href="./Home.html">Home</a>
         </div>
 
         <div class="icon">
-            <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039606955926364292/unknown.png" />
+            <a class="label" id="make_note" href="./make_note.html">
+                <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039606955926364292/unknown.png" />
+            </a>
             <a class="label" id="make_note" href="./make_note.html">Make Note</a>
         </div>
 
         <div class="icon">
-            <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039604755883884565/unknown.png" />
+            <a class="label" id="video" href="./mediaPage.html">
+                <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039604755883884565/unknown.png" />
+            </a>
             <a class="label" id="video" href="./mediaPage.html">Play Video/Music</a>
         </div>
 
         <div class="icon">
+        <a class="label" id="alarm" href="./setAlarm.html">
             <img class="logo" src="https://cdn.discordapp.com/attachments/1015387519396880414/1039607413625606204/unknown.png" />
+        </a>
             <a class="label" id="alarm" href="./setAlarm.html">Set Alarm</a>
         </div>
 
