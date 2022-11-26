@@ -11,6 +11,10 @@ body {
   font-size: 30px;
 }
 
+#user_message {
+  width: 400px;
+}
+
 .btnQuit{
   position: absolute;
   top: 0;
@@ -25,42 +29,39 @@ body {
   background: gray;
 }
 
-.home_oc {
-  width: 200px;
-  height: 100px;
-  display: inline-block;
-  padding: 1rem 1rem;
-  vertical-align: middle;
-  background: url=("Users/apple/Desktop/UIC/CS422/home.png") no-repeat;
+
+#inner {
+  width: 600px;
+  height: 200px;
+  text-align: center;
 }
 
 .mn_oc {
   width: 200px;
-  height: 100px;
+  height: 50px;
   display: inline-block;
   padding: 1rem 1rem;
   vertical-align: middle;
-  background: url=("Users/apple/Desktop/UIC/CS422/make note.png") no-repeat;
+  background: url=("/Users/apple/Desktop/UIC/CS422/make note.png") no-repeat;
 }
 
 .pvm_oc {
   width: 200px;
-  height: 100px;
+  height: 50px;
   display: inline-block;
   padding: 1rem 1rem;
   vertical-align: middle;
-  background: url=("Users/apple/Desktop/UIC/CS422/Play video/Music.png") no-repeat;
+  background: url=("/Users/apple/Desktop/UIC/CS422/Play video/Music.png") no-repeat;
 }
 
 .sa_oc {
   width: 200px;
-  height: 100px;
+  height: 50px;
   display: inline-block;
   padding: 1rem 1rem;
   vertical-align: middle;
-  background: url=("Users/apple/Desktop/UIC/CS422/Set Alarm.png") no-repeat;
+  background: url=("/Users/apple/Desktop/UIC/CS422/Set Alarm.png") no-repeat;
 }
-
 
 .row5{
   width: 100%;

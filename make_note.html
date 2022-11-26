@@ -48,21 +48,6 @@
       }
     });
 
-    // Click Font Color button once, it will change font color; click button twice,
-    // it will change back to orginal state. 
-    $(document).on('click', "#color", function (evt) {
-      if(fontState == 0) {
-        document.getElementById("input").style.color="blue";
-        document.getElementById("result").style.color="blue";
-        fontState = 1;
-      }
-      else if (fontState == 1) {
-        document.getElementById("input").style.color="black";
-        document.getElementById("result").style.color="black";
-        fontState = 0;        
-      }
-    });
-
     
     // Click Font Size button once, it will increase font size; click button twice,
     // it will change back to orginal state.
@@ -117,12 +102,19 @@
 
     // click ok, save the note and show delete button
     $(document).on('click', "#ok", function(evt){
+
+      var idx = 0;
+      //   $( ".tableCell" ).each(function() { 
+	    //   $( this ).text(note[idx]); 
+      //   idx += 1;
+      //   });
       
       var note = []
       note.push(document.getElementById("input").value);
       if(note!=''){
         document.getElementById("noteIcon").innerHTML = document.getElementById("selectedIcon").innerHTML;
-        document.getElementById("result").innerText=note[0];
+        document.getElementById("result").innerText=note[idx];
+        idx += 1;
         document.getElementById("delete").style.display="block";
         document.getElementById("delete").disabled=false;
       }
@@ -160,7 +152,6 @@
       <div>
         <button class="btn" type="button" id="bold">Bold Font</button>
         <button class="btn" type="button" id="type">Font Type</button>
-        <button class="btn" type="button" id="color">Font Color</button>
         <button class="btn" type="button" id="size">Font Size</button>
       </div>
       <div id="addicons" type="button" hidden>

@@ -9,7 +9,7 @@
   min-height: 100px;
   text-align: center;
   position: fixed;
-  bottom: 0;
+  bottom: 20px;
 }
 
 .btnQuit{
