@@ -9,6 +9,76 @@
     </style>
 
     <link rel="stylesheet" href="setAlarm.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(document).on('click', "#saveButton", function (evt) {
+        hourBox = document.getElementById("hoursCB");
+        minuteBox = document.getElementById("minsCB");
+        secondsBox = document.getElementById("secondsCB");
+        label = document.getElementById("labelTF");
+
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        
+        totalHours = prependZero((h + parseInt(hourBox.value))%24)
+        totalMin = prependZero((m + parseInt(minuteBox.value))%60)
+        totalSecs = prependZero((s + parseInt(secondsBox.value))%60)
+
+        var alarmText = label.value+":  Alarm at (" +totalHours+":"+totalMin+":"+totalSecs+")";
+
+        let days = document.querySelectorAll("input[type='checkbox']:checked");
+        console.log(days.length)
+        if (days.length != 0){
+          alarmText = alarmText+"; repeated every "
+          days.forEach(function(cb){
+            alarmText = alarmText+cb.value+", ";
+          });
+        }
+
+        var alarm = document.createElement("p");
+        alarm.innerHTML = alarmText;
+        alarm.style.textAlign = "center";
+        document.getElementById("savedAlarms").appendChild(alarm);
+
+      });
+
+      function prependZero(i) {
+        return (i < 10 ? "0"+i : i);
+
+}
+
+      $(document).on('click', "#clearButton", function (evt) {
+        hourBox = document.getElementById("hoursCB");
+        minuteBox = document.getElementById("minsCB");
+        secondsBox = document.getElementById("secondsCB");
+
+        hourBox.selectedIndex = 0 
+        minuteBox.selectedIndex = 0
+        secondsBox.selectedIndex = 0 
+
+        monday = document.getElementById("mondayToggle");
+        tuesday = document.getElementById("tuesdayToggle");
+        wednesday = document.getElementById("wednesdayToggle");
+        thursday = document.getElementById("thursdayToggle");
+        friday = document.getElementById("fridayToggle");
+        saturday = document.getElementById("saturdayToggle");
+        sunday = document.getElementById("sundayToggle");
+
+        label = document.getElementById("labelTF");
+        label.value = ""
+
+        let checked = document.querySelectorAll("input[type='checkbox']:checked");
+        checked.forEach(function(cb){
+          cb.checked = false
+        });
+
+      });
+
+    </script>
+
   </head>
   <body style="background-color:pink;">
     <table class="timer">
@@ -29,7 +99,7 @@
       </tr>
       <tr class="timerRow">
         <td>
-          <select name="hoursComboBox" id="hoursCB">
+          <select name="hoursComboBox" id="hoursCB" >
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -193,35 +263,49 @@
     </table>
     
     <div class="timerSettings">
-      <label for="monday">Monday</label>
-      <input type="radio" id="monday" name="weekdays" value="Monday">
-      <label for="tuesday">Tuesday</label>
-      <input type="radio" id="tuesday" name="weekdays" value="Tuesday">
-      <label for="wednesday">Wednesday</label>
-      <input type="radio" id="wednesday" name="weekdays" value="Wednesday">
-      <label for="thursday">Thursday</label>
-      <input type="radio" id="thursday" name="weekdays" value="Thursday">
-      <label for="friday">Friday</label>
-      <input type="radio" id="friday" name="weekdays" value="Friday">
-      <label for="saturday">Saturday</label>
-      <input type="radio" id="saturday" name="weekdays" value="Saturday">
-      <label for="sunday">Sunday</label>
-      <input type="radio" id="sunday" name="weekdays" value="Sunday">
+      <label class="label-checkbox" id="mondayToggle">
+        <input type="checkbox" value="Monday">
+        <span>Monday</span>
+      </label>
+      <label class="label-checkbox" id="tuesdayToggle">
+        <input type="checkbox" value="Tuesday">
+        <span>Tuesday</span>
+      </label>
+      <label class="label-checkbox" id="wednesdayToggle">
+        <input type="checkbox" value="Wednesday">
+        <span>Wednesday</span>
+      </label>      
+      <label class="label-checkbox" id="thursdayToggle">
+        <input type="checkbox" value="Thursday">
+        <span>Thursday</span>
+      </label>
+      <label class="label-checkbox" id="fridayToggle">
+        <input type="checkbox" value="Friday">
+        <span>Friday</span>
+      </label>
+      <label class="label-checkbox" id="saturdayToggle">
+        <input type="checkbox" value="Saturday">
+        <span>Saturday</span>
+      </label>
+      <label class="label-checkbox" id="sundayToggle">
+        <input type="checkbox" value="Sunday">
+        <span>Sunday</span>
+      </label>
+
 
       <br>
       <br>
       Label
-      <input class="labelTF"
+      <input class="labelTF" id ="labelTF"
           type="text"
           placeholder="Enter label here...">
       <br>
       <br>
-      <button style="font-family:Comic Sans MS" class="saveButton">Save</button>
-      
-      <button style="font-family:Comic Sans MS" class="cancelButton">Cancel</button>
+      <button style="font-family:Comic Sans MS" class="saveButton" id="saveButton">Save</button>
+      <button style="font-family:Comic Sans MS" class="clearButton" id="clearButton">Clear</button>
     </div>
 
-    <div class="savedAlarmsList">
+    <div class="savedAlarmsList" id="savedAlarms">
       <h2 style="text-align: center; font-family:Comic Sans MS">Saved Alarms</h2>
     </div>
 

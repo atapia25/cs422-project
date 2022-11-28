@@ -69,6 +69,33 @@
   padding-right: 20px; 
 }
 
+label.label-checkbox {
+  cursor: pointer;
+}
+
+label.label-checkbox input {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+label.label-checkbox span {
+  padding: 11px 21px;
+  border: 1px solid #7dc6f7;
+  display: inline-block;
+  color: #202020;
+  border-radius: 6px;
+  margin: 7px;
+  background: #7dc6f7;
+  user-select: none;
+}
+
+label.label-checkbox input:checked + span {
+  box-shadow: inset 1px 2px 5px #27a9ff;
+  transform: translateY(1px);
+  background: #4cb5fc;
+}
+
 .saveButton {
   background-color: #4CAF50;
   border: none;
@@ -82,7 +109,11 @@
   cursor: pointer;
 }
 
-.cancelButton {
+.saveButton:active {
+  background-color: #38883a;
+}
+
+.clearButton {
   background-color: #c70c0c;
   border: none;
   color: white;
@@ -93,4 +124,8 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.clearButton:active {
+  background-color: #8f0808;
 }
