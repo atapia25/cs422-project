@@ -103,18 +103,13 @@
     // click ok, save the note and show delete button
     $(document).on('click', "#ok", function(evt){
 
-      notePadDiv = document.getElementById("note");
-      newNoteText = document.getElementById("input").value
-
-      //notePadDiv.appendChild(newNoteText);
-
       var idx = 0;
       //   $( ".tableCell" ).each(function() { 
 	    //   $( this ).text(note[idx]); 
       //   idx += 1;
       //   });
-
-      var note = [document.getElementById("result").innerText]
+      
+      var note = []
       note.push(document.getElementById("input").value);
       if(note!=''){
         document.getElementById("noteIcon").innerHTML = document.getElementById("selectedIcon").innerHTML;
@@ -173,8 +168,8 @@
           <button type="button" class="btn" id="addIcon">+ icon</button>
           <div id="selectedIcon" style="width:80px; height:60px; display:inline-block;"></div>
           <input class="text" type="text" id="input" onkeyup="myFunction()" placeholder="Typing here..."></input>
-          <button class="btn" type="button" id="ok" style="color:aliceblue; background-color: #4CAF50;">Save</button>
-          <button class="btn" type="button" id="clear" style="color:aliceblue; background-color: #c70c0c;">Clear</button>
+          <button class="btn" type="button" id="ok" style="color:aliceblue; background-color: #4CAF50">OK</button>
+          <button class="btn" type="button" id="clear" style="color:aliceblue; background-color: #c70c0c ;">Clear</button>
         </form>
       </div>
     </div>
